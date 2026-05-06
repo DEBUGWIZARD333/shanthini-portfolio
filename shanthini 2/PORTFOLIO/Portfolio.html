@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanthini Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background: rgba(13,13,18,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.menu h1 { font-family:'Playfair Display',serif; font-size:32px; }
+.navbar { display:flex; gap:25px; }
+.menu a { text-decoration:none; color:rgba(255,255,255,0.85); font-size:16px; font-weight:500; transition:color 0.3s; }
+.menu a:hover { color:#ff4d5a; }
+
+/* ── SECTION WRAPPERS ── */
+section { display:block; margin:0; padding:0; }
+#home {
+    background: linear-gradient(135deg, #0D0D12 0%, #1A1A22 50%, #a21f1f 100%);
+    min-height: 100vh;
+}
+#about {
+    background: linear-gradient(135deg, #350692 0%, #2a4680 50%, #0b4a53 100%);
+    min-height: 100vh;
+}
+#education {
+    background: linear-gradient(135deg, #f59739 0%, #d31111 50%, #5619e2 100%);
+    min-height: 100vh;
+}
+#achievements {
+    background-image: url(pho.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+#resume {
+    background: #36363b;
+    padding: 40px 0 0 0;
+}
+
+/* ── HOME ── */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 80px);
+    padding: 0 80px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 80px;
+}
+.hero-content { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.greeting { color:#ff4d5a; letter-spacing:4px; margin-bottom:15px; }
+.name { font-size:70px; font-family:'Playfair Display',serif; margin-bottom:10px; }
+.role { font-size:26px; margin-bottom:25px; opacity:0.8; }
+.description { max-width:500px; line-height:1.7; color:rgba(255,255,255,0.7); margin-bottom:40px; }
+.btn-group { display:flex; gap:20px; }
+.btn { padding:12px 28px; border-radius:30px; border:none; cursor:pointer; font-size:15px; font-family:'Poppins',sans-serif; }
+.btn-primary { background:#ff4d5a; color:white; }
+.btn-secondary { background:transparent; border:1px solid white; color:white; }
+.hero-img-wrap { flex:1; display:flex; justify-content:center; align-items:center; }
+.hero-img { width:340px; height:440px; object-fit:cover; border-radius:20px; padding:8px; background:rgba(255,255,255,0.05); }
+
+/* ── ABOUT ── */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 60px;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.about-img {
+    width: 100%;
+    max-width: 550px;
+    height: 575px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    object-fit: cover;
+    position: sticky;
+    top: 90px;
+}
+.content-section { animation: slideInRight 0.8s ease; display:flex; flex-direction:column; }
+.about-title { font-size:48px; font-weight:700; font-family:'Playfair Display',serif; color:white; margin-bottom:30px; text-transform:uppercase; letter-spacing:2px; }
+.about-text { font-size:16px; line-height:1.8; color:rgba(255,255,255,0.95); margin-bottom:30px; text-align:justify; background:rgba(255,255,255,0.1); padding:25px; border-radius:15px; border-left:4px solid white; backdrop-filter:blur(5px); }
+.skills-section { margin-top:40px; }
+.skills-title { font-size:24px; font-weight:700; color:white; margin-bottom:20px; text-transform:uppercase; letter-spacing:1px; }
+.skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+.skill-item { background:rgba(255,255,255,0.15); padding:15px 20px; border-radius:10px; color:white; font-weight:500; border-left:3px solid #56b4bb; transition:all 0.3s; text-align:center; }
+.skill-item:hover { background:rgba(255,255,255,0.25); transform:translateY(-5px); }
+.ach-cards { margin-top:40px; display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.ach-card { background:rgba(255,255,255,0.1); padding:20px; border-radius:15px; border-top:3px solid #56b4bb; transition:all 0.3s; backdrop-filter:blur(5px); }
+.ach-card:hover { background:rgba(255,255,255,0.15); transform:translateY(-5px); }
+.ach-card-title { font-weight:700; margin-bottom:8px; color:#56b4bb; }
+.ach-card-text { font-size:14px; line-height:1.6; }
+
+/* ── EDUCATION ── */
+.edu-container { max-width:1200px; margin:0 auto; padding:40px 24px; }
+.edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+.edu-left { display:flex; align-items:center; justify-content:center; }
+.edu-left img { width:100%; max-width:520px; border-radius:16px; box-shadow:0 18px 45px rgba(0,0,0,0.15); object-fit:cover; position:sticky; top:90px; }
+.edu-right h2 { font-family:'Playfair Display',serif; font-size:40px; margin-bottom:12px; color:#fff; }
+.edu-intro { color:rgba(255,255,255,0.85); margin-bottom:22px; line-height:1.5; font-size:16px; }
+.card { background:rgba(255,255,255,0.12); padding:18px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.2); margin-bottom:18px; backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.15); }
+.label { display:flex; justify-content:space-between; color:rgba(255,255,255,0.9); margin-bottom:8px; font-weight:600; }
+.bar { height:12px; background:rgba(255,255,255,0.2); border-radius:12px; overflow:hidden; }
+.fill { height:100%; background:linear-gradient(90deg,#630d05,#ff2e17); }
+.fill-2021 { width:78.2%; }
+.fill-2010 { width:93%; }
+.fill-2002 { width:84%; }
+.skills-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+.skill-pill { background:rgba(255,255,255,0.15); padding:10px 12px; border-radius:10px; color:#fff; font-weight:600; text-align:center; border:1px solid rgba(255,255,255,0.2); }
+
+/* ── ACHIEVEMENTS ── */
+.ach-title {
+    text-align:center;
+    padding-top: 80px;
+    font-size:70px;
+    font-weight:700;
+    font-family:'Playfair Display',serif;
+    letter-spacing:1px;
+    color: white;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+    animation: popTitle 1.2s cubic-bezier(.68,-0.55,.27,1.55) 1;
+}
+@keyframes popTitle {
+    0% { transform:scale(0.7); opacity:0; }
+    60% { transform:scale(1.1); opacity:1; }
+    100% { transform:scale(1); }
+}
+.cert-wrap { max-width:700px; margin:40px auto 60px; text-align:center; }
+.cert-wrap h2 { font-family:'Playfair Display',serif; font-size:40px; color:#fff; margin-bottom:18px; }
+.cert-wrap img { max-width:100%; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); border:3px solid #538a6f; background:#fff; }
+.cert-caption { margin-top:10px; font-size:1.1rem; color:#eee9e9; font-weight:500; }
+
+/* ── RESUME ── */
+:root { --card:#1A1A22; --accent:#7C3AED; --subtext:#9CA3AF; }
+.resume-wrap { max-width:1100px; margin:0 auto; background:var(--card); border-radius:16px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5); }
+.resume-header { padding:30px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.resume-header h1 { font-size:32px; letter-spacing:2px; }
+.contact-info { margin-top:10px; font-size:14px; color:var(--subtext); }
+.resume-body { display:grid; grid-template-columns:1fr 2fr; }
+.res-left { padding:30px; border-right:1px solid rgba(255,255,255,0.08); }
+.res-right { padding:30px; }
+.res-section { margin-bottom:30px; }
+.res-section h3 { font-size:14px; color:var(--accent); margin-bottom:10px; letter-spacing:1px; }
+.res-section p, .res-section li { font-size:14px; color:var(--subtext); line-height:1.6; }
+.res-right h3 { font-size:16px; color:var(--accent); margin-bottom:10px; }
+.res-right p, .res-right li { font-size:14px; color:var(--subtext); line-height:1.6; }
+ul { padding-left:18px; }
+.res-section:hover { transform:translateY(-2px); transition:0.3s; }
+
+/* ── ANIMATIONS ── */
+@keyframes slideInRight {
+    from { opacity:0; transform:translateX(50px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:900px) {
+    .hero { flex-direction:column; text-align:center; padding:40px 20px; }
+    .btn-group { justify-content:center; }
+    .name { font-size:48px; }
+    .about-container { grid-template-columns:1fr; padding:30px 20px; }
+    .about-img { position:static; max-width:100%; height:400px; }
+    .edu-grid { grid-template-columns:1fr; }
+    .edu-left img { position:relative; top:0; max-width:420px; margin-bottom:18px; }
+    .resume-body { grid-template-columns:1fr; }
+    .menu { padding:20px 24px; }
+    .navbar { gap:15px; flex-wrap:wrap; justify-content:center; }
+    .ach-title { font-size:48px; }
+    #resume { padding:30px 0 0 0; }
+}
+@media (max-width:480px) {
+    .menu h1 { font-size:24px; }
+    .menu a { font-size:13px; }
+    .edu-right h2 { font-size:32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="menu">
+    <h1>Shanthini</h1>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#resume">Resume</a>
+    </nav>
+</div>
+
+<!-- HOME -->
+<section id="home">
+    <div class="hero">
+        <div class="hero-content">
+            <p class="greeting">WELCOME</p>
+            <h2 class="name">I'm Shanthini</h2>
+            <p class="role">Full Stack Developer</p>
+            <p class="description">
+                Passionate about building beautiful and functional web applications.
+                Specialized in modern web technologies with a keen eye for design and user experience.
+            </p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">View My Work</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('resume').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+            </div>
+        </div>
+        <div class="hero-img-wrap">
+            <img src="sha.png" class="hero-img" alt="Shanthini">
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="about-container">
+        <div>
+            <img class="about-img" src="sha.png" alt="Shanthini - Full Stack Developer">
+        </div>
+        <div class="content-section">
+            <h1 class="about-title">About Me</h1>
+            <p class="about-text">
+                I'm Shanthini, a Computer Application student and aspiring Full Stack Developer with a strong foundation in web development and programming. I have hands-on experience with HTML, CSS, JavaScript, and programming languages such as C, Java, and C++, along with version control using Git and GitHub. I am a passionate fresher and motivated learner, actively involved in hackathons, tech workshops, and competitions, including SIH Hackathon and EY Techathon 6.0. With a CGPA of 8.4/10, I balance technical skills with strong soft skills like communication, adaptability, critical thinking, and time management.
+            </p>
+            <div class="skills-section">
+                <h3 class="skills-title">Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">💻 HTML & CSS</div>
+                    <div class="skill-item">⚙️ JavaScript</div>
+                    <div class="skill-item">🔧 Java & C++</div>
+                    <div class="skill-item">📊 Git & GitHub</div>
+                    <div class="skill-item">🛢️ Database Management</div>
+                    <div class="skill-item">🌐 Web Development</div>
+                </div>
+            </div>
+            <div class="ach-cards">
+                <div class="ach-card">
+                    <div class="ach-card-title">🎓 CGPA: 8.4/10</div>
+                    <div class="ach-card-text">Strong academic performance demonstrating dedication and technical expertise</div>
+                </div>
+                <div class="ach-card">
+                    <div class="ach-card-title">🏆 SIH Hackathon</div>
+                    <div class="ach-card-text">Active participant in Smart India Hackathon with innovative solutions</div>
+                </div>
+                <div class="ach-card">
+                    <div class="ach-card-title">🎯 Leadership</div>
+                    <div class="ach-card-text">Event Coordinator & Department Treasurer with proven teamwork abilities</div>
+                </div>
+                <div class="ach-card">
+                    <div class="ach-card-title">📈 EY Techathon 6.0</div>
+                    <div class="ach-card-text">Competed in prestigious techathon with cutting-edge technology challenges</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="edu-container">
+        <div class="edu-grid">
+            <div class="edu-left">
+                <img src="edu.png" alt="Education illustration - Shanthini">
+            </div>
+            <div class="edu-right">
+                <h2>Education</h2>
+                <p class="edu-intro">Academic milestones and performance overview. Below are the academic years, percentages, and CGPA — along with a quick snapshot of technical and soft skills.</p>
+                <div class="card">
+                    <div class="label"><span>10th (2021 - 2022)</span><span>78.2%</span></div>
+                    <div class="bar"><div class="fill fill-2021"></div></div>
+                </div>
+                <div class="card">
+                    <div class="label"><span>12th (2023 - 2024)</span><span>93%</span></div>
+                    <div class="bar"><div class="fill fill-2010"></div></div>
+                </div>
+                <div class="card">
+                    <div class="label"><span>Current CGPA (BCA)</span><span>8.4 / 10</span></div>
+                    <div class="bar"><div class="fill fill-2002"></div></div>
+                </div>
+                <div class="card">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                        <strong style="color:#fff">Skills</strong>
+                    </div>
+                    <div class="skills-row">
+                        <div>
+                            <div class="skill-pill">HTML & CSS</div>
+                            <div class="skill-pill" style="margin-top:8px">JavaScript</div>
+                            <div class="skill-pill" style="margin-top:8px">MERN Basics</div>
+                        </div>
+                        <div>
+                            <div class="skill-pill">Java & C++</div>
+                            <div class="skill-pill" style="margin-top:8px">Git & GitHub</div>
+                            <div class="skill-pill" style="margin-top:8px">Database</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+    <h1 class="ach-title">Achievements</h1>
+    <div class="cert-wrap">
+        <h2>Certificate On Cyber Crime</h2>
+        <img src="cer.jpg" alt="Certificate">
+        <div class="cert-caption">Full Stack Developer Certificate</div>
+    </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+    <div class="resume-wrap">
+        <div class="resume-header">
+            <h1>SHANTHINI</h1>
+            <div class="contact-info">LinkedIn | Phone | Email | Location | Portfolio</div>
+        </div>
+        <div class="resume-body">
+            <div class="res-left">
+                <div class="res-section">
+                    <h3>EDUCATION</h3>
+                    <p>CGPA - 8.4/10</p>
+                    <p>KPR College of Arts Science and Research (2024 - 2027)</p>
+                    <br>
+                    <p>HSC - 93%</p>
+                    <p>Literary Mission (2023 - 2024)</p>
+                    <br>
+                    <p>SSLC - 78.2%</p>
+                    <p>R.V.S Matriculation (2021 - 2022)</p>
+                </div>
+                <div class="res-section">
+                    <h3>SOFT SKILLS</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Critical Thinking</li>
+                        <li>Time Management</li>
+                        <li>Adaptability and Flexibility</li>
+                    </ul>
+                    <h3 style="margin-top:20px;">HARD SKILLS</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Networking</li>
+                        <li>Programming Languages (C, Java, C++)</li>
+                        <li>Markup Languages (HTML, CSS, JavaScript)</li>
+                        <li>Version Control (Git, GitHub)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="res-right">
+                <div class="res-section">
+                    <h3>OBJECTIVE</h3>
+                    <p>Passionate Fresher and Visionary leader in Technology with the record of driving innovations. Motivated and a great listener with a blend of technical abilities and management skills.</p>
+                </div>
+                <div class="res-section">
+                    <h3>CO-CURRICULAR ACTIVITIES</h3>
+                    <ul>
+                        <li>Participated in SIH Hackathon</li>
+                        <li>Participated in EY Techathon 6.0</li>
+                        <li>Presented a paper at an Intercollege Paper Presentation Competition</li>
+                    </ul>
+                    <h3 style="margin-top:20px;">EXTRA-CURRICULAR ACTIVITIES</h3>
+                    <ul>
+                        <li>Team player in Volleyball team</li>
+                        <li>Placed in Athletics event</li>
+                        <li>Developed a Poster on "No Drugs"</li>
+                    </ul>
+                </div>
+                <div class="res-section">
+                    <h3>ACHIEVEMENTS</h3>
+                    <ul>
+                        <li>Best Presenter Award</li>
+                        <li>Active Listener Award</li>
+                        <li>Placed in Drawing Competition</li>
+                        <li>Secured 1st Place in Inter College Volleyball Tournament</li>
+                    </ul>
+                </div>
+                <div class="res-section">
+                    <h3>CERTIFICATION</h3>
+                    <ul>
+                        <li>FreeCodeCamp Certificate</li>
+                        <li>Introduction to Cyber Crime</li>
+                        <li>Java Programming language - Hacker Rank</li>
+                    </ul>
+                </div>
+                <div class="res-section">
+                    <h3>LANGUAGES</h3>
+                    <p>Tamil • English • French • Saurashtra</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

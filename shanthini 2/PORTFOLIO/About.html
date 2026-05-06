@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Shanthini - Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #350692 0%, #2a4680 50%, #0b4a53 100%);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 40px;
+            background: #350692;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid #f8f7fa;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            min-height: 80px;
+        }
+
+        .menu h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #f6feff;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            font-size: 22px;
+        }
+
+        .menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f8ffff;
+            transition: width 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #ced2d2f9;
+        }
+
+        .menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Container */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 60px;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+
+
+        .image {
+            width: 890px;
+            height: 575px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            /* transition: transform 0.3s ease; */
+            object-fit: cover;
+            top: 80px;
+            max-width: 550px;
+            left: 25%;
+            position: sticky;
+
+        }
+
+        /* Content Section */
+        .content-section {
+            animation: slideInRight 0.8s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-title {
+            font-size: 48px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: white;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid white;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            margin-top: 40px;
+            flex: 1;
+        }
+
+        .skills-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            border-left: 3px solid #56b4bb;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        /* Achievements */
+        .achievements {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            border-top: 3px solid #56b4bb;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .achievement-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .achievement-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #56b4bb;
+        }
+
+        .achievement-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+
+            .image {
+                position: static;
+                max-width: 100%;
+                height: 400px;
+                width: auto;
+            }
+
+            .menu {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+
+            .menu h1 {
+                font-size: 24px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .menu a {
+                font-size: 14px;
+            }
+
+            .about-title {
+                font-size: 36px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text {
+                font-size: 15px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="About">
+        <h1>Shanthini</h1>
+        <nav class="navbar">
+            <a href="Portfolio.html">Home</a>
+            <a href="#About">About Me</a>
+            <a href="Education.html">Education</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Resume.html">Resume</a>
+        </nav>
+    </div>
+
+    <section class="about-container">
+        <div class="image-section">
+            <img class="image" src="sha.png" alt="Shanthini - Full Stack Developer">
+        </div>
+
+        <div class="content-section">
+            <h1 class="about-title">About Me</h1>
+            <p class="about-text">
+                I'm Shanthini, a Computer Application student and aspiring Full Stack Developer with a strong foundation in web development and programming. I have hands-on experience with HTML, CSS, JavaScript, and programming languages such as C, Java, and C++, along with version control using Git and GitHub. I am a passionate fresher and motivated learner, actively involved in hackathons, tech workshops, and competitions, including SIH Hackathon and EY Techathon 6.0. With a CGPA of 8.4/10, I balance technical skills with strong soft skills like communication, adaptability, critical thinking, and time management.
+            </p>
+
+            <div class="skills-section">
+                <h3 class="skills-title">Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">💻 HTML & CSS</div>
+                    <div class="skill-item">⚙️ JavaScript</div>
+                    <div class="skill-item">🔧 Java & C++</div>
+                    <div class="skill-item">📊 Git & GitHub</div>
+                    <div class="skill-item">🛢️ Database Management</div>
+                    <div class="skill-item">🌐 Web Development</div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <div class="achievement-card">
+                    <div class="achievement-title">🎓 CGPA: 8.4/10</div>
+                    <div class="achievement-text">Strong academic performance demonstrating dedication and technical expertise</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">🏆 SIH Hackathon</div>
+                    <div class="achievement-text">Active participant in Smart India Hackathon with innovative solutions</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">🎯 Leadership</div>
+                    <div class="achievement-text">Event Coordinator & Department Treasurer with proven teamwork abilities</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">📈 EY Techathon 6.0</div>
+                    <div class="achievement-text">Competed in prestigious techathon with cutting-edge technology challenges</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

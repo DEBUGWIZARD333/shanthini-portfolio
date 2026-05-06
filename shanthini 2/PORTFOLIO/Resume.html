@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanthini Resume</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #36363b;
+    --card: #1A1A22;
+    --accent: #7C3AED;
+    --text: #E5E7EB;
+    --subtext: #9CA3AF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,13,18,0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar h2 {
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Container */
+.resume {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Header */
+.header {
+    padding: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+.contact {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--subtext);
+}
+
+/* Layout */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* Left Side */
+.left {
+    padding: 30px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.section p, .section li {
+    font-size: 14px;
+    color: var(--subtext);
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 18px;
+}
+
+/* Right Side */
+.right {
+    padding: 30px;
+}
+
+.right h3 {
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.right p, .right li {
+    font-size: 14px;
+    color: var(--subtext);
+    line-height: 1.6;
+}
+
+/* Hover */
+.section:hover {
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Shanthini</h2>
+    <div class="nav-links">
+        <a href="Portfolio.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Education.html">Education</a>
+        <a href="#achievements">Achievements</a>
+    </div>
+</div>
+
+<div class="resume">
+
+    <div class="header">
+        <h1>SHANTHINI</h1>
+        <div class="contact">
+            LinkedIn | Phone | Email | Location | Portfolio
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <div class="section" id="education">
+                <h3>EDUCATION</h3>
+                <p>CGPA - 8.4/10</p>
+                <p>KPR College of Arts Science and Research (2024 - 2027)</p>
+                <br>
+                <p>HSC - 93%</p>
+                <p>Literary Mission (2023 - 2024)</p>
+                <br>
+                <p>SSLC - 78.2%</p>
+                <p>R.V.S Matriculation (2021 - 2022)</p>
+            </div>
+
+            <div class="section" id="skills">
+                <h3>SOFT SKILLS</h3>
+                <ul>
+                    <li>Communication</li>
+                    <li>Critical Thinking</li>
+                    <li>Time Management</li>
+                    <li>Adaptability and Flexibility</li>
+                </ul>
+
+                <h3 style="margin-top:20px;">HARD SKILLS</h3>
+                <ul>
+                    <li>Web Development</li>
+                    <li>Networking</li>
+                    <li>Programming Languages (C, Java, C++)</li>
+                    <li>Markup Languages (HTML, CSS, JavaScript)</li>
+                    <li>Version Control (Git, GitHub)</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <div class="section" id="objective">
+                <h3>OBJECTIVE</h3>
+                <p>
+                    Passionate Fresher and Visionary leader in Technology with the record of driving innovations.
+                    Motivated and a great listener with a blend of technical abilities and management skills.
+                </p>
+            </div>
+
+            <div class="section" id="activities">
+                <h3>CO-CURRICULAR ACTIVITIES</h3>
+                <ul>
+                    <li>Participated in SIH Hackathon</li>
+                    <li>Participated in EY Techathon 6.0</li>
+                    <li>Presented a paper at an Intercollege Paper Presentation Competition</li>
+                </ul>
+
+                <h3 style="margin-top:20px;">EXTRA-CURRICULAR ACTIVITIES</h3>
+                <ul>
+                    <li>Team player in Volleyball team</li>
+                    <li>Placed in Athletics event</li>
+                    <li>Developed a Poster on “No Drugs”</li>
+                </ul>
+            </div>
+
+            <div class="section" id="achievements">
+                <h3>ACHIEVEMENTS</h3>
+                <ul>
+                    <li>Best Presenter Award</li>
+                    <li>Active Listener Award</li>
+                    <li>Placed in Drawing Competition</li>
+                    <li>Secured 1st Place in Inter College Volleyball Tournament</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>CERTIFICATION</h3>
+                <ul>
+                    <li>FreeCodeCamp Certificate</li>
+                    <li>Introduction to Cyber Crime</li>
+                    <li>Java Programming language - Hacker Rank</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>LANGUAGES</h3>
+                <p>Tamil • English • French • Saurashtra</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

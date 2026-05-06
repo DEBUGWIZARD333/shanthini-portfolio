@@ -1,0 +1,209 @@
+// ...existing code...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanthini - Full Stack Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Achievements.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page background: pho.png fills the viewport */
+        body {
+            background-image: url(pho.png);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: whitesmoke;
+            overflow-x: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* transition: background 0.6s; */
+        }
+
+        /* Navigation Bar */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 40px;
+            background: rgba(8, 7, 7, 0.7);
+            backdrop-filter: blur(6px);
+            border-bottom: 2px solid #e92c32;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            min-height: 72px;
+        }
+
+        .menu h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: whitesmoke;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 18px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.2s ease;
+            padding: 8px 0;
+        }
+
+        /* Center the achievements panel below the nav */
+        main#achievements {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 72px); /* account for nav height */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .panel {
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        h1#achievements-title {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            letter-spacing: 0.6px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 700px) {
+            h1#achievements-title { font-size: 2.4rem; }
+            ul { font-size: 1.05rem; }
+        }
+        .title {
+            text-align: center;
+            margin-top: 280px;
+            font-size: 70px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #0a0707, #000000, #dd5858);
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3), 0 0 8px #000000;
+            animation: popTitle 1.2s cubic-bezier(.68,-0.55,.27,1.55) 1;
+        }
+
+        @keyframes popTitle {
+            0% { transform: scale(0.7); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .achievements-panel {
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
+        }
+        .achievements-list {
+            margin: 0 auto;
+            padding-left: 2.5rem;
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            background: rgba(255,255,255,0.07);
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0, 223, 216, 0.12);
+            border-left: 4px solid #00dfd8;
+        }
+        .achievements-list li {
+            margin-bottom: 1.1em;
+            padding: 0.5em 0.5em 0.5em 0.2em;
+            color: #fff;
+            font-weight: 500;
+            position: relative;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .achievements-list li::before {
+            content: "🏆 ";
+            font-size: 1.1em;
+            margin-right: 0.5em;
+            color: #00dfd8;
+        }
+        .achievements-list li:hover {
+            transform: scale(1.04) translateX(8px);
+            color: #00dfd8;
+        }
+        .smokewhite-bg {
+            background-image: none !important;
+            background-color: whitesmoke !important;
+            color: #222 !important;
+            transition: background 0.6s;
+        }
+    </style>
+<script>
+// Switch to smokewhite background after scrolling 200px
+window.addEventListener('scroll', function() {
+    const body = document.body;
+    if (window.scrollY > 200) {
+        body.classList.add('smokewhite-bg');
+    } else {
+        body.classList.remove('smokewhite-bg');
+    }
+});
+</script>
+</head>
+<body>
+    <div class="menu" id="Home">
+        <h1>Shanthini</h1>
+        <nav class="navbar">
+            <a href="#Home">Home</a>
+            <a href="About.html">About Me</a>
+            <a href="Education.html">Education</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Resume.html">Resume</a>
+        </nav>
+    </div>
+    <h1 class="title">Achievements</h1>
+    
+    <div style="max-width:700px;margin:40px auto 0 auto;text-align:center;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:#070808;margin-bottom:18px;font-size: 40px;">Certificate On Cyber Crime</h2>
+        <img src="cer.jpg" alt="Certificate" style="max-width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.18);border:3px solid #538a6f;background:#fff;" />
+        <div style="margin-top:10px;font-size:1.1rem;color:#eee9e9;font-weight:500;">Full Stack Developer Certificate </div>
+    </div>
+</body>
+</html>
+// ...existing code...
